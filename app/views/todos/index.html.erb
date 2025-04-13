@@ -1,0 +1,40 @@
+<h1>Todos</h1>
+<%
+=begin%>
+ <p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Todos" %>
+
+
+<div class="container">
+  <div id="todo-list">
+  <h1>ToDo</h1>
+  <% @todos.each do |todo| %>
+      <%= form_with(model: todo, data: { turbo: true })  do |f|%>
+          <%= f.check_box :completed, class: "todo-checkbox" %>
+          <%= f.text_field :description, disabled:true%>
+      <% end %>
+  <% end %>
+  </div>
+  <div id="new-todo-form">
+      <%= form_with(model: Todo.new, data: { turbo: true }) do |f|%>
+          <%= f.check_box :completed, class: "todo-checkbox" %>
+          <%= f.text_field :description, autofocus: true %>
+      <% end %>
+  </div>
+</div>
+
+
+
+
+<script>
+    var element = document.getElementById("todo-list")
+    element.addEventListener("change", function(event) {
+        if (event.target.classList.contains("todo-checkbox")) {
+            event.target.form.submit();
+        }
+    });
+
+</script> 
+<%
+=end%>

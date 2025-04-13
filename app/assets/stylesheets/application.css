@@ -8,3 +8,51 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+ @media (min-width: 768px) { 
+    .container {
+        width: 30%
+    }
+  } /* Styles for larger screens */
+  @media (max-width: 767px) {
+    .container {
+        width: 100%
+    }
+    
+  }
+
+* {
+    margin: 0;
+}
+ .container {
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgba(79, 79, 79, 0.1);
+    border-radius: 1rem;
+    margin-top: 2em;
+ }
+
+ #todo-list{
+    width: 70%;
+    margin: auto;
+ }
+
+ #new-todo-form {
+    width: 70%;
+    margin: auto;
+ }
+
+
+ input {
+    background-color: transparent;
+    border: none;
+    /* outline: none; */
+    font-size: 1em;
+    
+ }
+
+ nav {
+    background-color:  rgba(79, 79, 79, 0.1);
+    width: 100%;
+    height: 60px;
+ }
+ 

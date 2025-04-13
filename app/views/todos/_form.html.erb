@@ -1,0 +1,10 @@
+<div id="new-todo-form">
+    <%= form_for Todo.new, remote:true do |f|%>
+        <%= f.check_box :completed, class: "todo-checkbox" %>
+        <%= f.text_field :description, id: "new-form-input" %>
+    <% end %>
+</div>
+<script>
+    let element = document.getElementById("new-form-input");
+    element.focus();
+</script>
